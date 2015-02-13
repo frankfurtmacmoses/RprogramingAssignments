@@ -3,7 +3,7 @@ complete <- function(directory,id = 1:332 ){
    d_frame <- data.frame()
    for (i in id){
       file_content <- read.csv(files[i]) 
-      obs <- nrow(file_content)
+      obs <- nrow(na.omit((file_content)))
       com_col <- c(i,obs)
       d_frame <- rbind(d_frame,com_col)
            
